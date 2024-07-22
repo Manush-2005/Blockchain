@@ -1,0 +1,19 @@
+// database
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://Frist_owner:g3H7vxUTsqaV@ep-nameless-math-a1i3i69x.ap-southeast-1.aws.neon.tech/Blockchain?sslmode=require"
+}
+
+// generator
+generator client {
+  provider             = "prisma-client-py"
+  recursive_type_depth = 5
+}
+
+
+
+model User {
+  id    Int     @id @default(autoincrement())
+  name  String 
+  walletaddress String @unique 
+}
